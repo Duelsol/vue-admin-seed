@@ -4,7 +4,7 @@
  * @param str 日期字符串
  * @returns {Date}
  */
-export function toDate(str) {
+export function toDate (str) {
   return new Date(str.replace(/(\d{4})-(\d{2})-(\d{2})T(.*)?\.(.*)/, '$1/$2/$3 $4'))
 }
 
