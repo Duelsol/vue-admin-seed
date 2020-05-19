@@ -44,11 +44,11 @@
 </template>
 
 <script>
-import { getList } from '@/api/table'
+import { getList } from '@/services/table'
 
 export default {
   filters: {
-    statusFilter(status) {
+    statusFilter (status) {
       const statusMap = {
         published: 'success',
         draft: 'gray',
@@ -57,17 +57,17 @@ export default {
       return statusMap[status]
     }
   },
-  data() {
+  data () {
     return {
       list: null,
       listLoading: true
     }
   },
-  created() {
+  created () {
     this.fetchData()
   },
   methods: {
-    fetchData() {
+    fetchData () {
       this.listLoading = true
       getList().then(response => {
         this.list = response.data.items
